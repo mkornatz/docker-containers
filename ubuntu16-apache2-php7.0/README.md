@@ -18,6 +18,8 @@ Version 16.04
 
 ## PHP
 
+Version 7.0.13
+
 To override the default php configuration, mount a local file on top of the php.ini:
 
 ```
@@ -25,6 +27,8 @@ To override the default php configuration, mount a local file on top of the php.
 ```
 
 ## Apache
+
+Version 2.4.18
 
 Override the default vhost by mounting your own:
 
