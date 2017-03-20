@@ -4,11 +4,14 @@ RUN apt-get update && apt-get install -y \
   apache2 \
   libapache2-mod-php \
   php \
+  php-xml \
+  php-gd \
   php-mysqlnd \
   php-mbstring \
   php-mcrypt \
   php-curl \
   php-imagick \
+  php-mongodb \
   && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # This writes a literal ${APACHE_SERVER_NAME} using single quotes

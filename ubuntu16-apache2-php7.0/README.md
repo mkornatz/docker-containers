@@ -4,7 +4,6 @@
 
 ## Environment Variables
 
-- `APACHE_SERVER_NAME` - the hostname to be used for the server
 - `APACHE_DOCUMENT_ROOT` - entry point for the php app (e.g. "/var/www/html/public")
 
 ## Volumes
