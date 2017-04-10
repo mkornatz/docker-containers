@@ -30,8 +30,13 @@ ENV APACHE_RUN_GROUP www-data
 ENV APACHE_LOG_DIR /var/log/apache2
 ENV APACHE_LOCK_DIR /var/run/apache.lock
 ENV APACHE_PID_FILE /var/run/apache.pid
+ENV APACHE_SERVER_NAME localhost
 
-VOLUME ["/var/www/html", "/var/log/apache2"]
+VOLUME ["/var/www/html"]
+
+# Sets up a link to have Apache output logs to stdout
+RUN ln -sfn /proc/self/fd/1 ${APACHE_LOG_DIR}/access.log && \
+    ln -sfn /proc/self/fd/1 ${APACHE_LOG_DIR}/error.log
 
 ADD ./start.sh /start.sh
 RUN chmod 755 /*.sh
