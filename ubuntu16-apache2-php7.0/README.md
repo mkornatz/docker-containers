@@ -2,6 +2,8 @@
 
 **Note: This is NOT configured for production use.**
 
+This container is meant for non-production environments.
+
 ## Environment Variables
 
 - `APACHE_DOCUMENT_ROOT` - entry point for the php app (e.g. "/var/www/html/public")
