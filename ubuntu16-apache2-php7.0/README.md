@@ -8,18 +8,16 @@ This container is meant for non-production environments.
 
 - `APACHE_DOCUMENT_ROOT` - entry point for the php app (e.g. "/var/www/html/public")
 
-## Volumes
+## Volumes Defined
 
 - `/var/www/html`
 - `/var/log/apache2`
 
-## Ubuntu
+## Stack
 
-Version 16.04
-
-## PHP
-
-Version 7.0.13
+- Ubuntu 16.04
+- Apache 2.4.18
+- PHP 7.0.13
 
 To override the default php configuration, mount a local file on top of the php.ini:
 
@@ -27,14 +25,13 @@ To override the default php configuration, mount a local file on top of the php.
 ./php.ini:/etc/php/7.0/apache2/php.ini
 ```
 
-## Apache
-
-Version 2.4.18
+## Apache Config
 
 Override the default vhost by mounting your own:
 
-```
-./my-vhost.conf:/etc/apache2/sites-available/000-default.conf
+```yaml
+volumes:
+  - ./my-vhost.conf:/etc/apache2/sites-available/000-default.conf
 ```
 
 ## Build & Push
